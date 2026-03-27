@@ -1,8 +1,64 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Dashboard";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+    .dashboard-container {
+        padding: 40px;
+        text-align: center;
+    }
+
+    .dashboard-title {
+        font-size: 28px;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .dashboard-subtitle {
+        color: #777;
+        margin-bottom: 30px;
+    }
+
+    .card-box {
+        display: inline-block;
+        padding: 25px;
+        width: 250px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        transition: 0.3s;
+    }
+
+        .card-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-box h3 {
+            margin-bottom: 10px;
+        }
+
+    .btn-go {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background: #7a5cff;
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+    }
+
+        .btn-go:hover {
+            background: #6848e0;
+        }
+</style>
+
+<div class="dashboard-container">
+    <h1 class="dashboard-title">Bienvenida 👋</h1>
+    <p class="dashboard-subtitle">Gestiona tu sistema fácilmente</p>
+
+    <div class="card-box">
+        <h3>Usuarios</h3>
+        <p>Administra los usuarios del sistema</p>
+        <a href="/User" class="btn-go">Ir al CRUD</a>
+    </div>
 </div>
