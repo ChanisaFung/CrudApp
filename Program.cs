@@ -1,7 +1,7 @@
 using CrudApp.Data;
 using CRUDApp.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Sqlite;
+using Microsoft.EntityFrameworkCore.Sqlite;   
 
 var builder = WebApplication.CreateBuilder(args);
 
