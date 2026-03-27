@@ -1,0 +1,10 @@
+﻿@model CRUDApp.Models.User
+
+<h2>Editar Usuario</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Id" />
+    <input type="text" asp-for="Username" />
+    <input type="text" asp-for="Password" />
+    <button type="submit">Actualizar</button>
+</form>
