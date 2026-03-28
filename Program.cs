@@ -30,17 +30,6 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
-    if (!db.Users.Any())
-    {
-        db.Users.Add(new User
-        {
-            Username = "admin",
-            Password = "1234"
-        });
-
-        db.SaveChanges();
-    }
-}
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
