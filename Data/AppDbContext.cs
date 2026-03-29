@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using CrudApp.Models;
-using CRUDApp.Models;
 using System.Collections.Generic;
 
 
