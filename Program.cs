@@ -1,5 +1,5 @@
 using CrudApp.Data;
-using CRUDApp.Models;
+using CrudApp.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Sqlite;
 
