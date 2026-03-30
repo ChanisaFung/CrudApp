@@ -1,0 +1,35 @@
+﻿@model List<CrudApp.Models.Product>
+
+<h2>💄 Inventario de Cosméticos</h2>
+
+<a href="/Product/Create">+ Nuevo Producto</a>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Nombre</th>
+        <th>Marca</th>
+        <th>Categoría</th>
+        <th>Tono</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Expira</th>
+        <th>Acciones</th>
+    </tr>
+
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>@p.Name</td>
+            <td>@p.Brand</td>
+            <td>@p.Category</td>
+            <td>@p.Shade</td>
+            <td>$@p.Price</td>
+            <td>@p.Quantity</td>
+            <td>@p.ExpirationDate.ToShortDateString()</td>
+            <td>
+                <a href="/Product/Edit/@p.Id">✏️ Editar</a>
+                <a href="/Product/Delete/@p.Id">🗑 Eliminar</a>
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,10 @@
+﻿@model CrudApp.Models.User
+
+<h2 style="color:red;">⚠ Eliminar Usuario</h2>
+
+<p>¿Seguro que quieres eliminar a <strong>@Model.Username</strong>?</p>
+
+<form method="post">
+    <button style="background:red; color:white;">Eliminar</button>
+    <a href="/User">Cancelar</a>
+</form>
