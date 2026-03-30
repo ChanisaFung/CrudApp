@@ -1,25 +1,79 @@
 ﻿@model List<CrudApp.Models.User>
 
-<h2>Usuarios</h2>
-
-<a href="/User/Create">➕ Nuevo Usuario</a>
-
-<table border="1" cellpadding="10">
-    <tr>
-        <th>ID</th>
-        <th>Usuario</th>
-        <th>Acciones</th>
-    </tr>
-
-    @foreach (var u in Model)
-    {
-        <tr>
-            <td>@u.Id</td>
-            <td>@u.Username</td>
-            <td>
-                <a href="/User/Edit/@u.Id">Editar</a> |
-                <a href="/User/Delete/@u.Id">Eliminar</a>
-            </td>
-        </tr>
+<style>
+    .container {
+        padding: 30px;
     }
-</table>
+
+    .title {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    .btn-add {
+        padding: 10px 15px;
+        background: #7a5cff;
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+    }
+
+    table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+    }
+
+    th {
+        background: #f3f3f3;
+    }
+
+    tr:nth-child(even) {
+        background: #fafafa;
+    }
+
+    .btn-edit {
+        color: #007bff;
+        text-decoration: none;
+        margin-right: 10px;
+    }
+
+    .btn-delete {
+        color: red;
+        text-decoration: none;
+    }
+</style>
+
+<div class="container">
+    <h2 class="title">👤 Usuarios</h2>
+
+    <a href="/User/Create" class="btn-add">+ Nuevo Usuario</a>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Usuario</th>
+            <th>Acciones</th>
+        </tr>
+
+        @foreach (var u in Model)
+        {
+            <tr>
+                <td>@u.Id</td>
+                <td>@u.Username</td>
+                <td>
+                    <a href="/User/Edit/@u.Id" class="btn-edit">Editar</a>
+                    <a href="/User/Delete/@u.Id" class="btn-delete">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
