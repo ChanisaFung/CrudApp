@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CrudApp.Data;
 using System.Linq;
+using CrudApp.Models;
 
 namespace CrudApp.Controllers
 {
@@ -31,6 +32,36 @@ namespace CrudApp.Controllers
 
             ViewBag.Error = "Usuario o contraseña incorrectos";
             return View();
+        }
+
+        // GET
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        // POST
+        [HttpPost]
+        public IActionResult Register(User user)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(user);
+            }
+            var username = user.Username.Trim();
+
+            if (_context.Users.Any(u => u.Username.ToLower() == username.ToLower()))
+            {
+                ModelState.AddModelError("Username", "Este usuario ya existe");
+                return View(user);
+            }
+
+            user.Username = username;
+
+            _context.Users.Add(user);
+            _context.SaveChanges();
+
+            return RedirectToAction("Login");
         }
     }
 }

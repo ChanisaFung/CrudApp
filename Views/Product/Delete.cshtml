@@ -1,0 +1,14 @@
+﻿@model CrudApp.Models.Product
+
+<h2 style="color:red;">⚠ Eliminar Producto</h2>
+
+<p>
+    ¿Seguro que deseas eliminar
+    <strong>@Model.Name</strong> de la marca
+    <strong>@Model.Brand</strong>?
+</p>
+
+<form method="post">
+    <button style="background:red; color:white;">Eliminar</button>
+    <a href="/Product">Cancelar</a>
+</form>
