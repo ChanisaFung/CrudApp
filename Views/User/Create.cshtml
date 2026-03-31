@@ -1,28 +1,100 @@
 ﻿@model CrudApp.Models.User
 
 <style>
-    .form-box {
-        width: 300px;
-        margin: auto;
-        padding: 20px;
+    body {
+        background: #fff0f5;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .card {
         background: white;
-        border-radius: 12px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        width: 90%;
+        margin: 30px auto;
+    }
+
+    h2 {
+        color: #d63384;
+        text-align: center;
+        margin-bottom: 20px;
     }
 
     input {
         width: 100%;
         padding: 10px;
         margin-bottom: 10px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
     }
 
     button {
         width: 100%;
         padding: 10px;
-        background: #7a5cff;
+        background: #ff69b4;
         color: white;
         border: none;
-        border-radius: 8px;
+        border-radius: 10px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+        button:hover {
+            background: #ff1493;
+        }
+
+    .btn-link {
+        text-decoration: none;
+        margin-right: 10px;
+        font-weight: bold;
+    }
+
+    .edit {
+        color: #6f42c1;
+    }
+
+    .delete {
+        color: #dc3545;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    th {
+        background: #ffd6e8;
+        padding: 10px;
+    }
+
+    td {
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+    }
+
+    tr:hover {
+        background: #fff5fa;
+    }
+
+    .badge {
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+    }
+
+    .in {
+        background: #d4edda;
+        color: #155724;
+    }
+
+    .out {
+        background: #f8d7da;
+        color: #721c24;
     }
 </style>
 
