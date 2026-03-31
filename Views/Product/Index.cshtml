@@ -1,4 +1,5 @@
-﻿@model CrudApp.Models.User
+﻿@model List<CrudApp.Models.Product>
+
 <style>
     body {
         background: #fff0f5;
@@ -96,24 +97,37 @@
         color: #721c24;
     }
 </style>
-<h2>Editar Usuario</h2>
 
-<form method="post">
-    <input type="hidden" asp-for="Id" />
+<h2>💄 Inventario de Cosméticos</h2>
 
-    <div>
-        <input asp-for="Username" />
-        <span asp-validation-for="Username" style="color:red"></span>
-    </div>
+<a href="/Product/Create">+ Nuevo Producto</a>
 
-    <div>
-        <input asp-for="Password" />
-        <span asp-validation-for="Password" style="color:red"></span>
-    </div>
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Nombre</th>
+        <th>Marca</th>
+        <th>Categoría</th>
+        <th>Tono</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Expira</th>
+        <th>Acciones</th>
+    </tr>
 
-    <button type="submit">Actualizar</button>
-</form>
-
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>@p.Name</td>
+            <td>@p.Brand</td>
+            <td>@p.Category</td>
+            <td>@p.Shade</td>
+            <td>$@p.Price</td>
+            <td>@p.Quantity</td>
+            <td>@p.ExpirationDate.ToShortDateString()</td>
+            <td>
+                <a href="/Product/Edit/@p.Id">✏️ Editar</a>
+                <a href="/Product/Delete/@p.Id">🗑 Eliminar</a>
+            </td>
+        </tr>
+    }
+</table>

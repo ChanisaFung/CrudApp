@@ -1,4 +1,4 @@
-﻿@model CrudApp.Models.User
+﻿@model CrudApp.Models.Product
 <style>
     body {
         background: #fff0f5;
@@ -96,22 +96,33 @@
         color: #721c24;
     }
 </style>
-<h2>Editar Usuario</h2>
+<h2>💄 Crear Producto</h2>
 
 <form method="post">
-    <input type="hidden" asp-for="Id" />
 
-    <div>
-        <input asp-for="Username" />
-        <span asp-validation-for="Username" style="color:red"></span>
-    </div>
+    <input asp-for="Name" placeholder="Nombre" />
+    <span asp-validation-for="Name"></span>
 
-    <div>
-        <input asp-for="Password" />
-        <span asp-validation-for="Password" style="color:red"></span>
-    </div>
+    <input asp-for="Brand" placeholder="Marca" />
+    <span asp-validation-for="Brand"></span>
 
-    <button type="submit">Actualizar</button>
+    <input asp-for="Category" placeholder="Categoría" />
+    <span asp-validation-for="Category"></span>
+
+    <input asp-for="Shade" placeholder="Tono" />
+
+    <input asp-for="Price" placeholder="Precio" />
+    <span asp-validation-for="Price"></span>
+
+    <input asp-for="Quantity" placeholder="Cantidad" />
+    <span asp-validation-for="Quantity"></span>
+
+    <input asp-for="ExpirationDate" type="date" />
+
+    <input asp-for="Description" placeholder="Descripción" />
+
+    <button type="submit">Guardar</button>
+
 </form>
 
 @section Scripts {

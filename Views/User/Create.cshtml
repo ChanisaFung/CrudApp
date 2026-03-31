@@ -1,9 +1,117 @@
 ﻿@model CrudApp.Models.User
 
-<h2>Crear Usuario</h2>
+<style>
+    body {
+        background: #fff0f5;
+        font-family: 'Segoe UI', sans-serif;
+    }
 
-<form method="post">
-    <input type="text" asp-for="Username" placeholder="Usuario" />
-    <input type="password" asp-for="Password" placeholder="Contraseña" />
-    <button type="submit">Guardar</button>
-</form>
+    .card {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        width: 90%;
+        margin: 30px auto;
+    }
+
+    h2 {
+        color: #d63384;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        background: #ff69b4;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+        button:hover {
+            background: #ff1493;
+        }
+
+    .btn-link {
+        text-decoration: none;
+        margin-right: 10px;
+        font-weight: bold;
+    }
+
+    .edit {
+        color: #6f42c1;
+    }
+
+    .delete {
+        color: #dc3545;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    th {
+        background: #ffd6e8;
+        padding: 10px;
+    }
+
+    td {
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+    }
+
+    tr:hover {
+        background: #fff5fa;
+    }
+
+    .badge {
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+    }
+
+    .in {
+        background: #d4edda;
+        color: #155724;
+    }
+
+    .out {
+        background: #f8d7da;
+        color: #721c24;
+    }
+</style>
+
+<div class="form-box">
+    <h2>Crear Usuario</h2>
+
+    <form method="post">
+        <input asp-for="Username" placeholder="Usuario" />
+        <span asp-validation-for="Username" style="color:red"></span>
+
+        <input asp-for="Password" type="password" placeholder="Contraseña" />
+        <span asp-validation-for="Password" style="color:red"></span>
+
+        <button type="submit">Guardar</button>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
